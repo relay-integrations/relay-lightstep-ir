@@ -12,7 +12,7 @@ This [Lightstep IR](https://lightstep.com/incident-response/) trigger fires when
 - Optionally, specify filter criteria
 - Click `Save and Continue`
 - On the `Response rule actions` page, click `API / Webhook`
-![image info](../../media/configure-trigger.png)
+![image info](/media/configure-trigger.png)
 - Copy the Webhook URL from your Relay workflow and paste it in the URL field.
 - Optionally, click `Test` to test triggering the workflow.
 - Click `Save Actions`
