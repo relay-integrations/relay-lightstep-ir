@@ -2,7 +2,7 @@ apiVersion: integration/v1
 kind: Trigger
 name: lightstep-ir-trigger-alert-created
 version: 1
-summary: Jira issue created
+summary: Lightstep IR alert created
 description: |
   This trigger fires when a Lightstep IR alert is created.
 
