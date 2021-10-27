@@ -4,16 +4,17 @@ This [Lightstep IR](https://lightstep.com/incident-response/) trigger fires when
 
 ## Setup Instructions
 
-#TODO replace by appropriate Lightstep IR instructions / screenshots
+### Create a Relay Automation rule in Lightstep IR
 
-**NOTE: Configuring webhooks requires Jira administrator privileges**
-
-### Step 1: Create new webhook
-- Navigate to your System Settings in your Jira console 
-- Select "Webhooks" from the Advanced Section. 
-- Click "Create a Webhook" 
-
-### Step 2: Configure the webhook 
-- Name your trigger (e.g. "relay")
+- Navigate to `Automation` in Lightstep IR
+- Click `Create New rule`
+- Name your automation rule, for example `Trigger Relay Workflow`
+- Optionally, specify filter criteria
+- Click `Save and Continue`
+- On the `Response rule actions` page, click `API / Webhook`
+![image info](../../media/configure-trigger.png)
 - Copy the Webhook URL from your Relay workflow and paste it in the URL field.
-- Toggle the box for "Issue: Created" to configure the webhook to trigger when issues are created.
+- Optionally, click `Test` to test triggering the workflow.
+- Click `Save Actions`
+
+Your automation rule now will trigger the Relay workflow.
