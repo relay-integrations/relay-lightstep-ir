@@ -1,0 +1,42 @@
+apiVersion: integration/v1
+kind: Trigger
+name: lightstep-ir-trigger-alert-created
+version: 1
+summary: Jira issue created
+description: |
+  This trigger fires when a Lightstep IR alert is created.
+
+responders:
+- webhook
+
+schemas:
+  spec:
+    $schema: http://json-schema.org/draft-07/schema#
+  event:
+    source: file
+    file: event.schema.json
+
+build:
+  apiVersion: build/v1
+  kind: Docker
+
+publish:
+  repository: relaysh/lightstep-ir-trigger-alert-created
+
+examples:
+- summary: When a Lightstep IR alert is created
+  content:
+    apiVersion: v1
+    kind: Trigger
+    name: lightstep-ir-alert-created
+    source:
+      type: webhook
+      image: relaysh/lightstep-ir-trigger-alert-created
+    binding:
+      parameters:
+        Priority: ${data.Priority}
+        AssignedTeam: ${data.AssignedTeam}
+        ShortDescription: ${data.ShortDescription}
+        Description: ${data.Description}
+        MetricName: ${data.MetricName}
+        LinkToRecord: ${data.LinkToRecord}
